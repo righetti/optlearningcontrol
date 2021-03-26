@@ -1,4 +1,4 @@
-# Optimal and learning control for robotics (ECE-9243 / ME-GY 7973)
+# Reinforcement learning and optimal control for robotics (ROB-GY 6323)
 
 This repository provides material used for the class **Reinforcement learning and optimal control for robotics** (ROB-GY 6323) taught at New York University by [Ludovic Righetti](https://engineering.nyu.edu/faculty/ludovic-righetti).
 You are free to use and copy this material (at your own risk), please reference the material if you use it.
