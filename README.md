@@ -1,10 +1,10 @@
 # Optimal and learning control for robotics (ECE-9243 / ME-GY 7973)
 
-This repository provides material used for the class **Optimal and learning control for robotics** (ECE-9243 / ME-GY 7973) taught at New York University by [Ludovic Righetti](https://engineering.nyu.edu/faculty/ludovic-righetti).
+This repository provides material used for the class **Reinforcement learning and optimal control for robotics** (ROB-GY 6323) taught at New York University by [Ludovic Righetti](https://engineering.nyu.edu/faculty/ludovic-righetti).
 You are free to use and copy this material (at your own risk), please reference the material if you use it.
 
 ## Working with python
-We work with Python 3.7 - numpy, scipy and matplotlib are recommended libraries to install (come with Anaconda by default). Most the material is given as Jupyter notebooks.
+We work with Python 3.7 or above - numpy, scipy and matplotlib are recommended libraries to install (come with Anaconda by default). Most the material is given as Jupyter notebooks.
 
 Anaconda is a straightforward, multi-platform, easy-to-use python distribution. It can be downloaded here https://www.anaconda.com/download/ and extensive documentation is available here https://docs.anaconda.com/anaconda/
 
@@ -23,4 +23,4 @@ We welcome feedback. If you find any issues, errors or have any ideas to improve
 
 
 ## Contributors
-The material has been developped by [Ludovic Righetti](https://engineering.nyu.edu/faculty/ludovic-righetti) (ECE-MAE, NYU). JingYi Wang (Teaching Assistant) also helped developing the Spring 2019 material.
+The material has been developped by [Ludovic Righetti](https://engineering.nyu.edu/faculty/ludovic-righetti) (ECE-MAE, NYU). JingYi Wang (Teaching Assistant) helped develop the Spring 2019 material and Yilu Peng (Teaching Assistant) helped develop the Spring 2020 material.

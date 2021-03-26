@@ -1,6 +1,6 @@
 # Project 1 - Optimal Control
 
-The decription of the tasks is provided in the Jupyter Notebook.
+The decription of the tasks is provided in the Jupyter Notebook "iterative LQR to control a drone.ipynb"
 
 You will need to submit on NYUClasses:
 1. A report (pdf only) detailing your answers to all the questions. Please do include plots but do NOT include code.
