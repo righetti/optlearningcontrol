@@ -3,10 +3,14 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import IPython
 
-L1, L2, L3 = 1.0, 0.8, 0.6          # link lengths (m)
+L1, L2, L3 = 1.0, 0.8, 0.6 #links lengths
 
 
 def forward_kinematics(theta):
+    '''
+    input: states (3D vector)
+    output: endeffector position (2D vector)
+    '''
     th1, th2, th3 = theta
     p0 = np.array([0.0, 0.0])
     p1 = p0 + L1 * np.array([np.cos(th1), np.sin(th1)])
@@ -20,6 +24,14 @@ def next_state(state, u, dt=0.01):
 
 
 def simulate(x0, controller, N_steps, dt=0.01):
+    '''
+    simulates the manipulator from initial state x0 for N_steps time steps
+    dt is the integration timestep
+    controller can be either 1) a control trajectory, i.e. a numpy array [3,N_steps]
+    or 2) a function f(states) that behaves as a controller (takes states as an input and returns a 3D control vector)
+
+    the function returns a vector of time [N], states[3,N] and controls[3,N]
+    '''
     t = np.zeros([N_steps + 1,])
     states = np.zeros((3, N_steps+1))
     control = np.zeros((3, N_steps))
@@ -36,11 +48,7 @@ def simulate(x0, controller, N_steps, dt=0.01):
     return t, states, control
 
 
-# ----------------------------------------------------------------------
-# Animation --------------------------------------------------------------
-# ----------------------------------------------------------------------
 def animate_robot(traj):
-    # Prepare Matplotlib figure
     fig, ax = plt.subplots(figsize=(6, 6))
     ax.set_aspect('equal')
     ax.grid(True, which='both', ls='--', lw=0.5)
@@ -50,7 +58,7 @@ def animate_robot(traj):
     ax.set_ylim(-reach-0.2, reach+0.2)
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
-    ax.set_title('3‑DOF Planar Manipulator – Dynamic Simulation')
+    ax.set_title('3‑DOF Planar Manipulator')
 
     line, = ax.plot([], [], '-o', lw=3, markersize=8,
                     markerfacecolor='orange', color='steelblue')
@@ -78,8 +86,6 @@ def animate_robot(traj):
         pts = FK(q)
         line.set_data(pts[:, 0], pts[:, 1])
 
-        # Show current joint angles (degrees) and torques
-        # tau = control_torque(q, states[frame, 3:], times[frame])
         deg = np.degrees(q)
         txt.set_text(
             f'θ₁={deg[0]:.1f}°, θ₂={deg[1]:.1f}°, θ₃={deg[2]:.1f}°, tip=({pts[3,0]:.1f},{pts[3,1]:.1f})'
